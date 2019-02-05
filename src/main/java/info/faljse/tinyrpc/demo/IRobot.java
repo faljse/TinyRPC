@@ -1,5 +1,6 @@
 package info.faljse.tinyrpc.demo;
 
+import info.faljse.tinyrpc.codegen.ParamName;
 import info.faljse.tinyrpc.codegen.TinyRPCMethod;
 
 public interface IRobot {
@@ -14,10 +15,10 @@ public interface IRobot {
     public short getLineRight();
 
     @TinyRPCMethod(id=8)
-    public void motorLeft(short speed);
+    public void motorLeft(@ParamName("speed") short speed);
 
     @TinyRPCMethod(id=9)
-    public void motorRight(short speed);
+    public void motorRight(@ParamName("speed") short speed);
 
     @TinyRPCMethod(id=10)
     public void drawString();

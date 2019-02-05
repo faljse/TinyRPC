@@ -39,7 +39,7 @@ public class HeaderGen {
         for(Parameter p:parameters) {
             sb.append(Tools.typeToC(p.getType()));
             sb.append(" ");
-            sb.append(p.getName());
+            sb.append(p.getAnnotation(ParamName.class).value());
             sb.append(", ");
         }
         if( parameters.length>0)
